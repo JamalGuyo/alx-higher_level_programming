@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""
-class Square defines square.instantiate with size = 0
-Args:
-    size - must be an integer
-    ,otherwise raise TypeError with message 'size must be an integer'
-    if size < 0 raise ValueError with message 'size must be >= 0
-Returns:
-    None
-"""
+""" A module defining a square"""
 
 
 class Square:
+    """A class rep'ing a square"""
+
     def __init__(self, size=0):
+        """ Initialise Square class
+        Args:
+            size: rep size of square
+        Raises:
+            TypeError: if size is not an integer
+            ValueError: if size is less than zero
+        """
         if isinstance(size, int):
             if size >= 0:
                 self.__size = size
