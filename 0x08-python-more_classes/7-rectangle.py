@@ -5,7 +5,7 @@
 class Rectangle:
     """class Rectangle"""
     number_of_instances = 0
-    print_symbol: any = '#'
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """init width and height"""
@@ -67,12 +67,12 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ''
 
-        for row in range(self.__height):
-            for col in range(self.__width):
-                print(Rectangle.print_symbol, end="")
-            if(row != (self.__height - 1)):
-                print("")
-        return ''
+        rect = []
+        for i in range(self.__height):
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
 
     def __repr__(self):
         """string representation of instance"""
